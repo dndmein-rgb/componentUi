@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ViewTransitions } from "next-view-transitions";
-// import { RootProvider } from "fumadocs-ui/provider";
+import { RootProvider } from 'fumadocs-ui/provider/next';
 import { ThemeProvider } from "next-themes";
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +30,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          {/* <RootProvider> */}
+          <RootProvider>
           <ThemeProvider
               attribute="class"
               defaultTheme="system"
@@ -39,7 +39,7 @@ export default function RootLayout({
             >
            {children}
             </ThemeProvider>
-          {/* </RootProvider> */}
+          </RootProvider>
         </body>
       </html>
     </ViewTransitions>
