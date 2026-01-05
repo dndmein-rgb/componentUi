@@ -6,6 +6,7 @@ import TailwindCSS from "../icons/tailwind-css";
 import { BrowseComponentsButton } from "../ui/browse-button";
 import { BrowseBlocksButton } from "../ui/browse-blocks";
 import Features from "./features";
+import Link from "next/link";
 const HeroSection = () => {
   return (
     <div className="mx-auto w-full max-w-7xl min-h-screen flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 px-4 sm:px-6 mg:py-16 lg:py-20 ">
@@ -64,6 +65,71 @@ const HeroSection = () => {
           </div>
         </motion.div>
         <Features />
+      </div>
+      {/*RIGHT SIDE-COMPONENTS LAYOUT  */}
+      <div className="w-full lg:w-[55%] flex flex-col justify-between gap-6 lg:pl-8 ">
+        {/*Top Row-Action search bar */}
+        <motion.div
+          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center justify-center"
+        >
+          {/*Card components */}
+          <div className="w-full flex flex-col items-center justify-center">
+            <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+              Card
+            </span>
+            {/*<Card /> */}
+          </div>
+
+          <div className="w-full max-w-150 bg-transparent">
+            <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+              Components
+            </span>
+            {/*<ActionSearchBar /> */}
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="w-full "
+        >
+          <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+            AI Chat
+          </span>
+          <div className="w-full h-48 rounded-xl border border-zinc-200 dark:border-zinc-800 flex justify-center items-center">
+            {/**<AInput /> */}
+          </div>
+        </motion.div>
+             <motion.div
+          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 "
+        >
+          <div className="w-full">
+            <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+            Buttons
+          </span>
+          </div>
+          
+          <div className="w-full h-48 rounded-xl border border-zinc-200 dark:border-zinc-800 flex flex-col gap-3 justify-center items-center">
+            {/**<AInput /> */}
+            <Link href={'/docs/components/button'}>
+            {/* <Buttons />*/}
+            </Link> 
+            <Link href={'/docs/components/button'}> {/* <Buttons />*/}</Link>
+          </div>
+
+          <div className="w-full ">
+            <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
+            Buttons
+          </span>
+          <Link href={'/docs/components/input'}>{/*inputs*/}</Link>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
