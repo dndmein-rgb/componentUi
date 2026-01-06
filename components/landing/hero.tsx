@@ -30,9 +30,9 @@ import Card_LiquidProgress from "../codesnippetui/cardliquid";
 
 const HeroSection = () => {
   return (
-    <div className="mx-auto w-full max-w-7xl min-h-screen flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 px-4 sm:px-6 mg:py-16 lg:py-20 ">
+    <div className="mx-auto w-full max-w-7xl min-h-screen flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 px-4 sm:px-6 py-8 lg:py-12">
       {/*LEFT SIDE -TITLE & CTA */}
-      <div className="w-full lg:w-[45%] flex-col items-start text-left space-y-8">
+      <div className="w-full lg:w-[45%] flex flex-col items-center text-center space-y-8 lg:-mt-96">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ const HeroSection = () => {
               ease.
             </span>
           </h1>
-          <p className="mt-6 text-base md:text-xl text-zinc-700 dark:text-zinc-300 max-w-lg">
+          <p className="mt-6 text-base md:text-xl text-zinc-700 dark:text-zinc-300 max-w-lg mx-auto">
             A curated collection of{" "}
             <span className="font-semibold">100+ premium UI components</span>{" "}
             <span>crafted with </span>
@@ -68,9 +68,9 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-col justify-start w-full"
+          className="flex flex-col justify-center w-full"
         >
-          <span className="text-sm text-zinc-500 dark:text-zinc-300 pb-3 text-start flex items-center gap-2">
+          <span className="text-sm text-zinc-500 dark:text-zinc-300 pb-3 flex items-center justify-center gap-2">
             <TailwindCSS className="w-4 h-4" />
             <span className="flex items-center gap-1.5">
               Now updated for Tailwind CSS 4.0!
@@ -80,7 +80,7 @@ const HeroSection = () => {
               </span>
             </span>
           </span>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-3">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <BrowseComponentsButton />
             <BrowseBlocksButton />
           </div>
@@ -88,7 +88,7 @@ const HeroSection = () => {
         <Features />
       </div>
       {/*RIGHT SIDE-COMPONENTS LAYOUT  */}
-      <div className="w-full lg:w-[55%] flex flex-col justify-between gap-6 lg:pl-8 ">
+      <div className="w-full lg:w-[55%] flex flex-col justify-between gap-6 lg:pl-8">
         {/*Top Row-Action search bar */}
         <motion.div
           initial={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -117,12 +117,12 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: -20, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-full "
+          className="w-full"
         >
           <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
             AI Chat
           </span>
-          <div className="w-full h-48 rounded-xl border border-zinc-200 dark:border-zinc-800 flex justify-center items-center">
+          <div className="w-full h-48 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/20 flex justify-center items-center px-4">
             {/**<AInput /> */}
             <AIInput_04 />
           </div>
@@ -131,27 +131,33 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: -20, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 "
+          className="w-full grid grid-cols-1 md:grid-cols-2 gap-6"
         >
           <div className="w-full">
             <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
               Buttons
             </span>
-             <div className="w-full h-48 rounded-xl border border-zinc-200 dark:border-zinc-800 flex flex-col gap-3 justify-center items-center">
-            {/**<AInput /> */}
-            <Link href={"/docs/components/button"}>{/* <Buttons />*/} <Btn02 />
-            </Link>
-            <Link href={"/docs/components/button"}> {/* <Buttons />*/}<Btn07 /></Link>
-          </div>
+            <div className="w-full h-48 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/20 flex flex-col gap-3 justify-center items-center">
+              {/**<AInput /> */}
+              <Link href={"/docs/components/button"}>
+                {/* <Buttons />*/} <Btn02 />
+              </Link>
+              <Link href={"/docs/components/button"}>
+                {" "}
+                {/* <Buttons />*/}
+                <Btn07 />
+              </Link>
+            </div>
           </div>
 
-         
-
-          <div className="w-full ">
+          <div className="w-full">
             <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
-              Buttons
+              Status
             </span>
-            <Link href={"/docs/components/input"}>{/*inputs*/}<Card_LiquidProgress /></Link>
+            <Link href={"/docs/components/input"}>
+              {/*inputs*/}
+              <Card_LiquidProgress />
+            </Link>
           </div>
         </motion.div>
       </div>
