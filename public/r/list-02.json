@@ -1,0 +1,16 @@
+{
+  "name": "list-02",
+  "type": "registry:component",
+  "registryDependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { ChevronRight, User, Bell, Lock } from \"lucide-react\";\nimport type { LucideIcon } from \"lucide-react\";\n\ninterface SettingsItem {\n  id: string;\n  label: string;\n  icon: LucideIcon;\n  iconBgColor: string;\n}\n\nconst SETTINGS_ITEMS: SettingsItem[] = [\n  { id: \"1\", label: \"Account\", icon: User, iconBgColor: \"bg-blue-500\" },\n  { id: \"2\", label: \"Notifications\", icon: Bell, iconBgColor: \"bg-red-500\" },\n  { id: \"3\", label: \"Privacy & Security\", icon: Lock, iconBgColor: \"bg-green-500\" },\n];\n\nexport default function List_02() {\n  return (\n    <div className=\"w-full max-w-md mx-auto\">\n      <div className=\"bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 divide-y divide-zinc-200 dark:divide-zinc-800\">\n        {SETTINGS_ITEMS.map((item) => (\n          <div\n            key={item.id}\n            className=\"flex items-center justify-between p-3 cursor-pointer hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors\"\n          >\n            <div className=\"flex items-center gap-3\">\n              <div className={cn(\"w-8 h-8 rounded-lg flex items-center justify-center\", item.iconBgColor)}>\n                <item.icon className=\"w-5 h-5 text-white\" />\n              </div>\n              <span className=\"text-sm font-medium text-zinc-800 dark:text-zinc-200\">\n                {item.label}\n              </span>\n            </div>\n            <ChevronRight className=\"w-5 h-5 text-zinc-400\" />\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/list/list-02.tsx",
+      "target": "/components/codesnippetui/list-02.tsx"
+    }
+  ]
+}

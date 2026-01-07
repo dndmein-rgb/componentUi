@@ -1,0 +1,19 @@
+{
+  "name": "btn-03",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport { motion } from \"framer-motion\";\nimport { ArrowUpRight } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function Btn03() {\n  const [isHovered, setIsHovered] = useState(false);\n\n  return (\n    <motion.button\n      onHoverStart={() => setIsHovered(true)}\n      onHoverEnd={() => setIsHovered(false)}\n      className=\"relative flex items-center gap-2 px-6 py-3 bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 rounded-full font-medium\"\n    >\n      <span>Explore Features</span>\n      <motion.div\n        animate={{\n          x: isHovered ? 4 : 0,\n          y: isHovered ? -4 : 0,\n        }}\n        transition={{ type: \"spring\", stiffness: 300, damping: 15 }}\n      >\n        <ArrowUpRight className=\"w-4 h-4\" />\n      </motion.div>\n    </motion.button>\n  );\n}\n",
+      "path": "/components/codesnippetui/button/btn-03.tsx",
+      "target": "/components/codesnippetui/btn-03.tsx"
+    }
+  ]
+}

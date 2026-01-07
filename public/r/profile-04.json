@@ -1,0 +1,20 @@
+{
+  "name": "profile-04",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "badge",
+    "progress"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport Image from \"next/image\";\nimport { Plus } from \"lucide-react\";\n\ninterface Profile04Props {\n    user?: {\n        name?: string;\n        username?: string;\n        avatar?: string;\n        stats?: {\n            posts: number;\n            followers: string;\n            following: number;\n        }\n    }\n}\n\nconst defaultUser: Profile04Props['user'] = {\n    name: \"Lana Steiner\",\n    username: \"lanasteiner\",\n    avatar: \"https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop\",\n    stats: {\n        posts: 128,\n        followers: \"4.2M\",\n        following: 240\n    }\n};\n\nexport default function Profile_04({ user = defaultUser }: Profile04Props) {\n  return (\n    <div className=\"w-full max-w-xs mx-auto\">\n        <div className=\"bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-zinc-900 dark:via-zinc-950 dark:to-purple-900/20 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm\">\n            <div className=\"flex flex-col items-center\">\n                <div className=\"relative mb-4\">\n                    <Image\n                        src={user?.avatar || ''}\n                        alt={user?.name || ''}\n                        width={96}\n                        height={96}\n                        className=\"rounded-full object-cover\"\n                    />\n                    <button className=\"absolute -bottom-1 -right-1 w-7 h-7 bg-blue-600 rounded-full flex items-center justify-center text-white border-2 border-white dark:border-zinc-950\">\n                        <Plus className=\"w-4 h-4\"/>\n                    </button>\n                </div>\n                <h2 className=\"text-xl font-bold text-zinc-900 dark:text-white\">{user?.name}</h2>\n                <p className=\"text-sm text-zinc-500 dark:text-zinc-400\">@{user?.username}</p>\n\n                <div className=\"flex items-center justify-center gap-6 mt-6 w-full border-t border-zinc-200 dark:border-zinc-800 pt-6\">\n                    <div className=\"text-center\">\n                        <p className=\"font-bold text-lg text-zinc-900 dark:text-white\">{user?.stats?.posts}</p>\n                        <p className=\"text-xs text-zinc-500 dark:text-zinc-400\">Posts</p>\n                    </div>\n                     <div className=\"text-center\">\n                        <p className=\"font-bold text-lg text-zinc-900 dark:text-white\">{user?.stats?.followers}</p>\n                        <p className=\"text-xs text-zinc-500 dark:text-zinc-400\">Followers</p>\n                    </div>\n                     <div className=\"text-center\">\n                        <p className=\"font-bold text-lg text-zinc-900 dark:text-white\">{user?.stats?.following}</p>\n                        <p className=\"text-xs text-zinc-500 dark:text-zinc-400\">Following</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/profile/profile-04.tsx",
+      "target": "/components/codesnippetui/profile-04.tsx"
+    }
+  ]
+}

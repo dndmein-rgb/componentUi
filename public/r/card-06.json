@@ -1,0 +1,16 @@
+{
+  "name": "card-06",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { UserPlus } from \"lucide-react\";\n\ninterface Card06Props {\n  user?: {\n    name?: string;\n    username?: string;\n    avatar?: string;\n    bio?: string;\n    followers?: number;\n    following?: number;\n  };\n}\n\nconst defaultProps: Card06Props = {\n  user: {\n    name: \"Emily White\",\n    username: \"emilywhite\",\n    avatar: \"https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop\",\n    bio: \"UI/UX Designer | Passionate about creating beautiful and functional interfaces.\",\n    followers: 12500,\n    following: 340,\n  },\n};\n\nexport default function Card_06({ user = defaultProps.user }: Card06Props) {\n  // Function to format large numbers\n  const formatNumber = (num: number = 0) => {\n    if (num >= 1000) return `${(num / 1000).toFixed(1)}k`;\n    return num;\n  };\n\n  return (\n    <div\n      className={cn(\n        \"w-full max-w-sm mx-auto\",\n        \"bg-white dark:bg-zinc-950\",\n        \"border border-zinc-200 dark:border-zinc-800\",\n        \"rounded-2xl shadow-lg p-6\"\n      )}\n    >\n      <div className=\"flex flex-col items-center text-center\">\n        <img\n          src={user?.avatar}\n          alt={user?.name}\n          className=\"w-24 h-24 rounded-full object-cover mb-4 ring-4 ring-white dark:ring-zinc-950\"\n        />\n        <h3 className=\"text-xl font-bold text-zinc-900 dark:text-zinc-100\">\n          {user?.name}\n        </h3>\n        <p className=\"text-sm text-zinc-500 dark:text-zinc-400 mb-4\">\n          @{user?.username}\n        </p>\n        <p className=\"text-sm text-zinc-600 dark:text-zinc-300 mb-5\">\n          {user?.bio}\n        </p>\n        <div className=\"flex items-center justify-center gap-6 mb-5\">\n            <div className=\"text-center\">\n                <span className=\"font-bold text-lg text-zinc-900 dark:text-zinc-100\">{formatNumber(user?.followers)}</span>\n                <span className=\"text-xs text-zinc-500 dark:text-zinc-400 block\">Followers</span>\n            </div>\n            <div className=\"text-center\">\n                <span className=\"font-bold text-lg text-zinc-900 dark:text-zinc-100\">{formatNumber(user?.following)}</span>\n                <span className=\"text-xs text-zinc-500 dark:text-zinc-400 block\">Following</span>\n            </div>\n        </div>\n        <button\n          className=\"flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-semibold transition-transform active:scale-95 hover:bg-blue-700\"\n        >\n          <UserPlus className=\"w-4 h-4\" />\n          Follow\n        </button>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/card/card-06.tsx",
+      "target": "/components/codesnippetui/card-06.tsx"
+    }
+  ]
+}

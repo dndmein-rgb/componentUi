@@ -1,0 +1,16 @@
+{
+  "name": "card-05",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { Clock, MapPin } from \"lucide-react\";\n\ninterface Card05Props {\n  item?: {\n    title?: string;\n    description?: string;\n    image?: string;\n    location?: string;\n    time?: string;\n  };\n}\n\nconst defaultProps: Card05Props = {\n  item: {\n    title: \"Community Meetup\",\n    description: \"Join us for a day of networking and learning.\",\n    image: \"https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2232&auto=format&fit=crop\",\n    location: \"City Hall, Downtown\",\n    time: \"Sat, Jan 25, 10:00 AM\",\n  },\n};\n\nexport default function Card_05({ item = defaultProps.item }: Card05Props) {\n  return (\n    <div\n      className={cn(\n        \"w-full max-w-xl mx-auto\",\n        \"flex items-center gap-4\",\n        \"bg-white dark:bg-zinc-900\",\n        \"border border-zinc-200 dark:border-zinc-800\",\n        \"rounded-xl shadow-sm overflow-hidden p-3\"\n      )}\n    >\n      <div className=\"flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-lg overflow-hidden\">\n        <img\n          src={item?.image}\n          alt={item?.title}\n          className=\"w-full h-full object-cover\"\n        />\n      </div>\n      <div className=\"flex-1\">\n        <h3 className=\"text-base sm:text-lg font-semibold text-zinc-900 dark:text-zinc-100\">\n          {item?.title}\n        </h3>\n        <p className=\"text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-1 mb-2\">\n          {item?.description}\n        </p>\n        <div className=\"flex flex-col sm:flex-row sm:items-center gap-2 text-xs text-zinc-500\">\n            <div className=\"flex items-center gap-1.5\">\n                <MapPin className=\"w-3.5 h-3.5\" />\n                <span>{item?.location}</span>\n            </div>\n            <div className=\"hidden sm:block w-px h-3 bg-zinc-300 dark:bg-zinc-700\" />\n            <div className=\"flex items-center gap-1.5\">\n                <Clock className=\"w-3.5 h-3.5\" />\n                <span>{item?.time}</span>\n            </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/card/card-05.tsx",
+      "target": "/components/codesnippetui/card-05.tsx"
+    }
+  ]
+}

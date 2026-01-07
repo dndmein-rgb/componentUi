@@ -1,0 +1,16 @@
+{
+  "name": "list-05",
+  "type": "registry:component",
+  "registryDependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\n\ninterface UserItem {\n  id: string;\n  name: string;\n  username: string;\n  avatar: string;\n  isFollowing: boolean;\n}\n\nconst USER_ITEMS: UserItem[] = [\n  { id: \"1\", name: \"Alex Turner\", username: \"alex_t\", avatar: \"https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=2080&auto=format&fit=crop\", isFollowing: false },\n  { id: \"2\", name: \"Mia Wong\", username: \"miaw\", avatar: \"https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop\", isFollowing: true },\n  { id: \"3\", name: \"Leo Kim\", username: \"leo.kim\", avatar: \"https://images.unsplash.com/photo-1527982988738-c323493e83d8?q=80&w=2080&auto=format&fit=crop\", isFollowing: false },\n];\n\nexport default function List_05() {\n  return (\n    <div className=\"w-full max-w-sm mx-auto\">\n      <div className=\"bg-white dark:bg-zinc-900 rounded-2xl shadow-md border border-zinc-200/50 dark:border-zinc-800/50\">\n        <div className=\"p-4 border-b border-zinc-200/50 dark:border-zinc-800/50\">\n            <h3 className=\"font-semibold text-zinc-900 dark:text-white\">Who to follow</h3>\n        </div>\n        <div className=\"space-y-2 p-2\">\n            {USER_ITEMS.map((user) => (\n            <div\n                key={user.id}\n                className=\"flex items-center justify-between p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800/50\"\n            >\n                <div className=\"flex items-center gap-3\">\n                    <img\n                        src={user.avatar}\n                        alt={user.name}\n                        className=\"w-10 h-10 rounded-full object-cover\"\n                    />\n                    <div>\n                        <p className=\"text-sm font-bold text-zinc-800 dark:text-zinc-200\">{user.name}</p>\n                        <p className=\"text-xs text-zinc-500 dark:text-zinc-400\">@{user.username}</p>\n                    </div>\n                </div>\n                <button className={cn(\n                    \"px-3 py-1 text-xs font-semibold rounded-full transition-colors\",\n                    user.isFollowing\n                        ? \"bg-zinc-200 dark:bg-zinc-700 text-zinc-800 dark:text-zinc-200\"\n                        : \"bg-zinc-900 dark:bg-white text-white dark:text-black\"\n                )}>\n                    {user.isFollowing ? \"Following\" : \"Follow\"}\n                </button>\n            </div>\n            ))}\n        </div>\n        <div className=\"p-3 text-center\">\n            <a href=\"#\" className=\"text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline\">Show more</a>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/list/list-05.tsx",
+      "target": "/components/codesnippetui/list-05.tsx"
+    }
+  ]
+}

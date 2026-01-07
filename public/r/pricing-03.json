@@ -1,0 +1,18 @@
+{
+  "name": "pricing-03",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { CheckCircle2 } from \"lucide-react\";\n\ninterface FeatureListProps {\n  title?: string;\n  price?: string;\n  period?: string;\n  features?: string[];\n  buttonText?: string;\n}\n\nconst defaultProps: FeatureListProps = {\n  title: \"Community\",\n  price: \"Free\",\n  period: \"Forever\",\n  features: [\"Community support\", \"10 projects\", \"Basic analytics\", \"Email support\"],\n  buttonText: \"Sign up for free\",\n};\n\nexport default function Pricing_03({\n  title = defaultProps.title,\n  price = defaultProps.price,\n  period = defaultProps.period,\n  features = defaultProps.features,\n  buttonText = defaultProps.buttonText,\n}: FeatureListProps) {\n  return (\n    <div\n      className={cn(\n        \"w-full max-w-sm mx-auto\",\n        \"bg-white dark:bg-zinc-900/50\",\n        \"border border-zinc-200 dark:border-zinc-800\",\n        \"rounded-2xl p-6\"\n      )}\n    >\n      <h3 className=\"text-lg font-semibold text-zinc-800 dark:text-white mb-2\">\n        {title}\n      </h3>\n      <div className=\"flex items-baseline gap-2 mb-6\">\n        <span className=\"text-4xl font-bold text-zinc-900 dark:text-white\">{price}</span>\n        {period && <span className=\"text-sm text-zinc-500\">/ {period}</span>}\n      </div>\n      <ul className=\"space-y-3 mb-8\">\n        {features?.map((feature, i) => (\n          <li key={i} className=\"flex items-center gap-2\">\n            <CheckCircle2 className=\"w-4 h-4 text-green-500\" />\n            <span className=\"text-sm text-zinc-600 dark:text-zinc-300\">{feature}</span>\n          </li>\n        ))}\n      </ul>\n      <button className=\"w-full py-2 bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 rounded-lg font-semibold hover:bg-zinc-200 dark:hover:bg-zinc-700\">\n        {buttonText}\n      </button>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/pricing/pricing-03.tsx",
+      "target": "/components/codesnippetui/pricing-03.tsx"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "list-04",
+  "type": "registry:component",
+  "registryDependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { FileText, Download, MoreVertical } from \"lucide-react\";\n\ninterface FileItem {\n  id: string;\n  name: string;\n  size: string;\n  type: string;\n}\n\nconst FILE_ITEMS: FileItem[] = [\n  { id: \"1\", name: \"Project_Proposal_Final.pdf\", size: \"2.3 MB\", type: \"PDF\" },\n  { id: \"2\", name: \"brand_assets.zip\", size: \"15.1 MB\", type: \"ZIP\" },\n  { id: \"3\", name: \"wireframes_v3.fig\", size: \"8.7 MB\", type: \"Figma\" },\n  { id: \"4\", name: \"meeting_notes.docx\", size: \"128 KB\", type: \"Word\" },\n];\n\nexport default function List_04() {\n  return (\n    <div className=\"w-full max-w-xl mx-auto p-4 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800\">\n      <h3 className=\"text-base font-semibold text-zinc-900 dark:text-white mb-3\">\n        Project Files\n      </h3>\n      <div className=\"divide-y divide-zinc-100 dark:divide-zinc-800/50\">\n        {FILE_ITEMS.map((file) => (\n          <div\n            key={file.id}\n            className=\"flex items-center justify-between py-3\"\n          >\n            <div className=\"flex items-center gap-3 min-w-0\">\n                <div className=\"flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-zinc-100 dark:bg-zinc-800\">\n                    <FileText className=\"w-5 h-5 text-zinc-500\" />\n                </div>\n                <div className=\"min-w-0\">\n                    <p className=\"text-sm font-medium text-zinc-800 dark:text-zinc-200 truncate\">\n                        {file.name}\n                    </p>\n                    <p className=\"text-xs text-zinc-500 dark:text-zinc-400\">\n                        {file.size}\n                    </p>\n                </div>\n            </div>\n            <div className=\"flex items-center gap-2 flex-shrink-0\">\n                <button className=\"p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800\">\n                    <Download className=\"w-4 h-4 text-zinc-500\"/>\n                </button>\n                <button className=\"p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800\">\n                    <MoreVertical className=\"w-4 h-4 text-zinc-500\"/>\n                </button>\n            </div>\n          </div>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/list/list-04.tsx",
+      "target": "/components/codesnippetui/list-04.tsx"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "btn-08",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Trash2 } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function Btn08() {\n  const [isConfirming, setIsConfirming] = useState(false);\n\n  return (\n    <button\n      onMouseEnter={() => setIsConfirming(true)}\n      onMouseLeave={() => setIsConfirming(false)}\n      onFocus={() => setIsConfirming(true)}\n      onBlur={() => setIsConfirming(false)}\n      className={cn(\n        \"relative w-36 h-10 rounded-lg\",\n        \"bg-zinc-100 dark:bg-zinc-800\",\n        \"text-zinc-800 dark:text-zinc-200\",\n        \"font-semibold text-sm\",\n        \"transition-all duration-300 overflow-hidden\"\n      )}\n    >\n      <div\n        className={cn(\n          \"absolute inset-0 flex items-center justify-center gap-2 transition-transform duration-300\",\n          isConfirming ? \"-translate-y-full\" : \"translate-y-0\"\n        )}\n      >\n        <Trash2 className=\"w-4 h-4\" />\n        <span>Delete</span>\n      </div>\n      <div\n        className={cn(\n          \"absolute inset-0 flex items-center justify-center transition-transform duration-300 bg-red-500 text-white\",\n          isConfirming ? \"translate-y-0\" : \"translate-y-full\"\n        )}\n      >\n        <span>Are you sure?</span>\n      </div>\n    </button>\n  );\n}\n",
+      "path": "/components/codesnippetui/button/btn-08.tsx",
+      "target": "/components/codesnippetui/btn-08.tsx"
+    }
+  ]
+}

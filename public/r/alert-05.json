@@ -1,0 +1,16 @@
+{
+  "name": "alert-05",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { ShieldCheck } from \"lucide-react\";\n\nexport default function Alert05() {\n  return (\n    <div className=\"w-full max-w-xl mx-auto\">\n      <div className=\"relative p-[2px] rounded-xl overflow-hidden\">\n        <div className=\"absolute inset-0 bg-gradient-to-r from-green-400 to-teal-400 animate-gradient-xy\"></div>\n        <div className=\"relative bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-[10px] p-4\">\n            <div className=\"flex items-center gap-4\">\n              <div className=\"flex-shrink-0\">\n                <ShieldCheck className=\"h-7 w-7 text-green-500\" />\n              </div>\n              <div className=\"flex-1\">\n                <h3 className=\"text-sm font-bold text-zinc-800 dark:text-white\">\n                  Security Update\n                </h3>\n                <p className=\"text-xs text-zinc-600 dark:text-zinc-400 mt-0.5\">\n                  Your account is now protected with two-factor authentication.\n                </p>\n              </div>\n            </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/alert/alert-05.tsx",
+      "target": "/components/codesnippetui/alert-05.tsx"
+    }
+  ]
+}

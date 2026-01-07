@@ -1,0 +1,16 @@
+{
+  "name": "card-07",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { Zap } from \"lucide-react\";\n\ninterface Card07Props {\n  cta?: {\n    title?: string;\n    description?: string;\n  };\n}\n\nconst defaultProps: Card07Props = {\n  cta: {\n    title: \"Unlock Your Potential\",\n    description: \"Get started with our premium features today and take your productivity to the next level.\",\n  },\n};\n\nexport default function Card_07({ cta = defaultProps.cta }: Card07Props) {\n  return (\n    <div\n      className={cn(\n        \"w-full max-w-md mx-auto\",\n        \"relative rounded-2xl overflow-hidden text-white p-8\",\n        \"bg-gradient-to-br from-purple-600 to-indigo-700\",\n        \"shadow-2xl shadow-purple-500/20\"\n      )}\n    >\n      <div className=\"absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-20\" />\n      <div className=\"relative z-10 flex flex-col items-center text-center\">\n        <div className=\"p-3 bg-white/10 rounded-full mb-4\">\n            <Zap className=\"w-8 h-8 text-white\" />\n        </div>\n        <h3 className=\"text-2xl font-extrabold mb-2\">\n          {cta?.title}\n        </h3>\n        <p className=\"text-sm text-indigo-200 mb-6 max-w-xs\">\n          {cta?.description}\n        </p>\n        <button className=\"w-full max-w-xs px-5 py-3 bg-white text-indigo-700 rounded-xl text-sm font-bold transition-transform active:scale-95 hover:bg-indigo-100\">\n          Get Started\n        </button>\n      </div>\n    </div>\n  );\n}\n\n// Add this to your globals.css or a suitable CSS file\n/*\n.bg-grid-pattern {\n  background-image:\n    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),\n    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);\n  background-size: 20px 20px;\n}\n*/\n",
+      "path": "/components/codesnippetui/card/card-07.tsx",
+      "target": "/components/codesnippetui/card-07.tsx"
+    }
+  ]
+}

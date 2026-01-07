@@ -1,0 +1,12 @@
+{
+  "name": "action",
+  "type": "registry:lib",
+  "files": [
+    {
+      "type": "registry:lib",
+      "content": "\"use server\"\r\nimport path from \"path\";\r\nimport { promises as fs } from \"fs\";\r\nimport { cache } from \"react\";\r\n\r\n// Create a cached version of the file reading operation\r\nconst readFileCache = cache(async (filePath: string) => {\r\n    return await fs.readFile(filePath, \"utf-8\");\r\n});\r\n\r\n// Improve caching for the entire component getter\r\nexport const getComponent = async (fileName: string | null, folder: string) => {\r\n    const baseDir = path.join(process.cwd(), \"components/codesnippetui\");\r\n    if (!fileName || fileName === \"undefined\") {\r\n        const fullPath = path.join(baseDir, `${folder}.tsx`);\r\n        return await readFileCache(fullPath);\r\n    }\r\n\r\n    console.log(\"here\");\r\n    const fullPath = path.join(baseDir, folder, `${fileName}.tsx`);\r\n\r\n    return await readFileCache(fullPath);\r\n};\r\nexport type CopyComponentState = {\r\n    error: string;\r\n    content: string;\r\n    success: boolean;\r\n};\r\nexport const copyComponent = async (\r\n    prevState: CopyComponentState,\r\n    formData: FormData\r\n) => {\r\n    try {\r\n        const folder = formData.get(\"folder\");\r\n        const fileName = formData.get(\"fileName\");\r\n\r\n        if (!folder && !fileName) {\r\n            return {\r\n                error: \"Folder or file name not found\",\r\n                content: \"\",\r\n                success: false,\r\n            };\r\n        }\r\n\r\n        const content = await getComponent(\r\n            fileName as string,\r\n            folder as string\r\n        );\r\n\r\n        if (!content) {\r\n            return {\r\n                error: \"Component not found\",\r\n                content: \"\",\r\n                success: false,\r\n            };\r\n        }\r\n\r\n        return {\r\n            error: \"\",\r\n            content: content,\r\n            success: true,\r\n        };\r\n    } catch (error) {\r\n        console.error(error);\r\n        return {\r\n            error: \"Failed to copy component\",\r\n            content: \"\",\r\n            success: false,\r\n        };\r\n    }\r\n};",
+      "path": "/lib/action.ts",
+      "target": "/lib/action.ts"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "source",
+  "type": "registry:lib",
+  "dependencies": [
+    "fumadocs-mdx",
+    "fumadocs-core",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "type": "registry:lib",
+      "content": "import { docs, meta } from \"@/.source\";\nimport { createMDXSource, resolveFiles } from 'fumadocs-mdx';\nimport { loader } from \"fumadocs-core/source\";\n\nimport { icons } from \"lucide-react\";\nimport { createElement } from \"react\";\n\nexport const source = loader({\n    baseUrl: \"/docs\",\n     source: {\n        files: resolveFiles({ docs, meta }),\n    },\n    icon(icon) {\n        if (!icon) { \n            return createElement(icons.Library);\n        }\n\n        if (icon in icons)\n            return createElement(icons[icon as keyof typeof icons]);\n        \n        return undefined;\n    },\n});\n    ",
+      "path": "/lib/source.ts",
+      "target": "/lib/source.ts"
+    }
+  ]
+}

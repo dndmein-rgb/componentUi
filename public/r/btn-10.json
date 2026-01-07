@@ -1,0 +1,18 @@
+{
+  "name": "btn-10",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { ArrowRight } from \"lucide-react\";\nimport { useState, MouseEvent } from \"react\";\n\nexport default function Btn10() {\n  const [spotlightStyle, setSpotlightStyle] = useState({});\n\n  const handleMouseMove = (e: MouseEvent<HTMLButtonElement>) => {\n    const { clientX, clientY, currentTarget } = e;\n    const { left, top } = currentTarget.getBoundingClientRect();\n    setSpotlightStyle({\n      background: `radial-gradient(circle at ${clientX - left}px ${clientY - top}px, rgba(255, 255, 255, 0.2), transparent 40%)`\n    });\n  };\n\n  const handleMouseLeave = () => {\n    setSpotlightStyle({});\n  };\n\n  return (\n    <button\n      onMouseMove={handleMouseMove}\n      onMouseLeave={handleMouseLeave}\n      className={cn(\n        \"relative h-12 px-8 rounded-xl\",\n        \"bg-zinc-900 text-white\",\n        \"overflow-hidden\",\n        \"transition-all duration-300\",\n        \"group\"\n      )}\n    >\n      <span\n        className=\"absolute inset-0 transition-all duration-300\"\n        style={spotlightStyle}\n      />\n      <span className=\"relative flex items-center gap-2\">\n        <span>View Details</span>\n        <ArrowRight className=\"w-4 h-4 transition-transform duration-300 group-hover:translate-x-1\" />\n      </span>\n    </button>\n  );\n}\n",
+      "path": "/components/codesnippetui/button/btn-10.tsx",
+      "target": "/components/codesnippetui/btn-10.tsx"
+    }
+  ]
+}

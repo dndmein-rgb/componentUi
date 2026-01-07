@@ -1,0 +1,17 @@
+{
+  "name": "alert-04",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { Info, ExternalLink } from \"lucide-react\";\n\nexport default function Alert04() {\n  return (\n    <div className=\"w-full max-w-xl mx-auto\">\n      <div className=\"bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 dark:border-blue-400 rounded-r-lg p-4\">\n        <div className=\"flex\">\n          <div className=\"pr-3 pt-0.5\">\n            <Info className=\"h-5 w-5 text-blue-500 dark:text-blue-400\" />\n          </div>\n          <div className=\"flex-1\">\n            <h3 className=\"text-sm font-semibold text-blue-800 dark:text-blue-300 mb-1\">\n              New Feature Available\n            </h3>\n            <p className=\"text-[13px] text-blue-700 dark:text-blue-400 mb-3\">\n              We've just released a new feature that you might find useful.\n            </p>\n            <div className=\"flex gap-3\">\n                <button className=\"flex items-center gap-1.5 text-xs font-medium text-blue-600 dark:text-blue-300 hover:underline\">\n                    Learn More <ExternalLink className=\"h-3.5 w-3.5\" />\n                </button>\n                <button className=\"text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:underline\">\n                    Dismiss\n                </button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/alert/alert-04.tsx",
+      "target": "/components/codesnippetui/alert-04.tsx"
+    }
+  ]
+}

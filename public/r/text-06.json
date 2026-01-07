@@ -1,0 +1,13 @@
+{
+  "name": "text-06",
+  "type": "registry:component",
+  "dependencies": [],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\r\n\r\nexport default function Text_06() {\r\n    return (\r\n        <div className=\"flex items-center justify-center py-4\">\r\n            <h1 className=\"text-4xl sm:text-3xl font-bold starlight-text\">\r\n                Starlight\r\n            </h1>\r\n            <style>{`\r\n                .starlight-text {\r\n                    background: radial-gradient(\r\n                        circle at center,\r\n                        #fff 0%,\r\n                        #eab308 20%,\r\n                        #854d0e 40%,\r\n                        #422006 100%\r\n                    );\r\n                    background-size: 200% 200%;\r\n                    -webkit-background-clip: text;\r\n                    background-clip: text;\r\n                    color: transparent;\r\n                    animation: star-pulse 5s infinite radial;\r\n                }\r\n                @keyframes star-pulse {\r\n                    0%, 100% { background-position: 0% 0%; filter: brightness(1); }\r\n                    50% { background-position: 100% 100%; filter: brightness(1.5); }\r\n                }\r\n            `}</style>\r\n        </div>\r\n    );\r\n}",
+      "path": "/components/codesnippetui/text/text-06.tsx",
+      "target": "/components/codesnippetui/text-06.tsx"
+    }
+  ]
+}

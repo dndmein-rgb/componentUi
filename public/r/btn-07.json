@@ -1,0 +1,18 @@
+{
+  "name": "btn-07",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { Send } from \"lucide-react\";\n\nexport default function Btn07() {\n  return (\n    <button\n      className={cn(\n        \"relative inline-flex items-center justify-center h-12 px-8 rounded-full\",\n        \"overflow-hidden\",\n        \"bg-blue-600 text-white font-medium\",\n        \"shadow-lg shadow-blue-500/30\",\n        \"transition-all duration-300\",\n        \"group\"\n      )}\n    >\n      <span className=\"absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/20 to-transparent opacity-0 transform -translate-x-10 -translate-y-10 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500\" />\n      <span className=\"relative flex items-center gap-2\">\n        <Send className=\"w-4 h-4\" />\n        <span>Submit</span>\n      </span>\n    </button>\n  );\n}\n",
+      "path": "/components/codesnippetui/button/btn-07.tsx",
+      "target": "/components/codesnippetui/btn-07.tsx"
+    }
+  ]
+}

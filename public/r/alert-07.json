@@ -1,0 +1,18 @@
+{
+  "name": "alert-07",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { Rocket, ArrowRight } from \"lucide-react\";\n\nexport default function Alert07() {\n  return (\n    <div className=\"w-full max-w-xl mx-auto\">\n      <div className=\"relative bg-zinc-900 border border-zinc-800 shadow-lg rounded-2xl p-4 overflow-hidden\">\n        <div className=\"flex items-center gap-4\">\n            <div className=\"absolute -left-4 -top-4 w-20 h-20 rounded-full bg-violet-600/30 blur-2xl\" />\n            <div className=\"relative flex-shrink-0 w-12 h-12 flex items-center justify-center bg-violet-500/10 border border-violet-500/20 rounded-xl\">\n              <Rocket className=\"h-6 w-6 text-violet-400\" />\n            </div>\n            <div className=\"flex-1\">\n              <h3 className=\"text-sm font-semibold text-white\">\n                Upgrade to Pro\n              </h3>\n              <p className=\"text-xs text-zinc-400 mt-1\">\n                Unlock all features and get priority support.\n              </p>\n            </div>\n            <button className=\"flex items-center justify-center w-8 h-8 rounded-full bg-zinc-800 hover:bg-zinc-700 transition-colors\">\n                <ArrowRight className=\"h-4 w-4 text-zinc-400\" />\n            </button>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/alert/alert-07.tsx",
+      "target": "/components/codesnippetui/alert-07.tsx"
+    }
+  ]
+}

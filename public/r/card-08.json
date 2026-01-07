@@ -1,0 +1,16 @@
+{
+  "name": "card-08",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\n\ninterface Card08Props {\n  testimonial?: {\n    quote?: string;\n    author?: {\n      name?: string;\n      role?: string;\n      avatar?: string;\n    };\n  };\n}\n\nconst defaultProps: Card08Props = {\n  testimonial: {\n    quote: \"This is a game-changer. The simplicity and power of the tools are unmatched. Highly recommended for any developer.\",\n    author: {\n      name: \"Sarah Johnson\",\n      role: \"Lead Developer, TechCorp\",\n      avatar: \"https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=2070&auto=format&fit=crop\",\n    },\n  },\n};\n\nexport default function Card_08({ testimonial = defaultProps.testimonial }: Card08Props) {\n  return (\n    <div\n      className={cn(\n        \"w-full max-w-md mx-auto\",\n        \"bg-zinc-50 dark:bg-zinc-900\",\n        \"border border-zinc-200/80 dark:border-zinc-800/80\",\n        \"rounded-xl p-8\"\n      )}\n    >\n      <div className=\"relative\">\n        <span className=\"absolute -top-4 -left-4 font-serif text-8xl text-zinc-100 dark:text-zinc-800/50\">\n          “\n        </span>\n        <blockquote className=\"relative text-lg font-medium text-zinc-800 dark:text-zinc-200 leading-relaxed\">\n          {testimonial?.quote}\n        </blockquote>\n      </div>\n      <div className=\"flex items-center gap-4 mt-6\">\n        <img\n          src={testimonial?.author?.avatar}\n          alt={testimonial?.author?.name}\n          className=\"w-12 h-12 rounded-full object-cover\"\n        />\n        <div>\n          <h4 className=\"font-semibold text-zinc-900 dark:text-zinc-100\">\n            {testimonial?.author?.name}\n          </h4>\n          <p className=\"text-sm text-zinc-500 dark:text-zinc-400\">\n            {testimonial?.author?.role}\n          </p>\n        </div>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/card/card-08.tsx",
+      "target": "/components/codesnippetui/card-08.tsx"
+    }
+  ]
+}

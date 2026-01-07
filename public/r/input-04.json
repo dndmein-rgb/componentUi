@@ -1,0 +1,15 @@
+{
+  "name": "input-04",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\nimport { ArrowRight } from \"lucide-react\";\n\ninterface InputWithButtonProps {\n  placeholder?: string;\n  buttonText?: string;\n  onSubmit?: (value: string) => void;\n}\n\nexport default function Input_04({\n  placeholder = \"Enter your email\",\n  buttonText = \"Subscribe\",\n  onSubmit,\n}: InputWithButtonProps) {\n  const [value, setValue] = useState(\"\");\n\n  const handleSubmit = () => {\n    onSubmit?.(value);\n  };\n\n  return (\n    <div className=\"w-full max-w-sm\">\n      <div className=\"relative flex items-center\">\n        <input\n          type=\"email\"\n          value={value}\n          onChange={(e) => setValue(e.target.value)}\n          placeholder={placeholder}\n          className={cn(\n            \"w-full pl-4 pr-32 py-3\", // Make space for the button\n            \"rounded-full\",\n            \"bg-zinc-100 dark:bg-zinc-800/50\",\n            \"border border-zinc-200 dark:border-zinc-700/50\",\n            \"text-sm text-zinc-900 dark:text-zinc-100\",\n            \"placeholder:text-zinc-500\",\n            \"focus:outline-none focus:ring-2 focus:ring-zinc-400/50 dark:focus:ring-white/20\"\n          )}\n        />\n        <button\n          onClick={handleSubmit}\n          className={cn(\n            \"absolute right-1.5 top-1/2 -translate-y-1/2\",\n            \"flex items-center gap-2 px-4 py-2\",\n            \"rounded-full\",\n            \"bg-zinc-900 dark:bg-white\",\n            \"text-white dark:text-zinc-900\",\n            \"text-sm font-semibold\",\n            \"transition-transform active:scale-95\"\n          )}\n        >\n          {buttonText}\n          <ArrowRight className=\"w-4 h-4\" />\n        </button>\n      </div>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/input/input-04.tsx",
+      "target": "/components/codesnippetui/input-04.tsx"
+    }
+  ]
+}

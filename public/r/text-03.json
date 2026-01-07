@@ -1,0 +1,15 @@
+{
+  "name": "text-03",
+  "type": "registry:component",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\r\n\r\nexport default function Text_03() {\r\n    return (\r\n        <div className=\"flex items-center justify-center py-4\">\r\n            <h1 className=\"text-4xl sm:text-3xl font-black tracking-tighter floating-text text-zinc-900 dark:text-white\">\r\n                Neon Depth\r\n            </h1>\r\n            <style>{`\r\n                .floating-text {\r\n                    animation: float 3s ease-in-out infinite;\r\n                    text-shadow: 0 0 0px rgba(139, 92, 246, 0);\r\n                }\r\n                @keyframes float {\r\n                    0%, 100% { \r\n                        transform: translateY(0); \r\n                        text-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);\r\n                    }\r\n                    50% { \r\n                        transform: translateY(-5px); \r\n                        text-shadow: 0 20px 30px rgba(139, 92, 246, 0.4);\r\n                    }\r\n                }\r\n            `}</style>\r\n        </div>\r\n    );\r\n}",
+      "path": "/components/codesnippetui/text/text-03.tsx",
+      "target": "/components/codesnippetui/text-03.tsx"
+    }
+  ]
+}

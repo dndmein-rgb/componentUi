@@ -1,0 +1,15 @@
+{
+  "name": "text-05",
+  "type": "registry:component",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\r\n\r\nexport default function Text_05() {\r\n    return (\r\n        <div className=\"flex items-center justify-center py-4 bg-zinc-900 rounded-lg\">\r\n            <h1 className=\"text-4xl sm:text-3xl font-black uppercase tracking-widest relative liquid-text\">\r\n                Oceanic\r\n            </h1>\r\n            <style>{`\r\n                .liquid-text {\r\n                    color: transparent;\r\n                    -webkit-text-stroke: 1px #3b82f6;\r\n                    background: linear-gradient(#3b82f6 50%, #fff 50%);\r\n                    background-size: 100% 200%;\r\n                    background-clip: text;\r\n                    -webkit-background-clip: text;\r\n                    animation: fill 4s ease-in-out infinite;\r\n                }\r\n                @keyframes fill {\r\n                    0%, 100% { background-position: 0% 100%; }\r\n                    50% { background-position: 0% 0%; }\r\n                }\r\n            `}</style>\r\n        </div>\r\n    );\r\n}",
+      "path": "/components/codesnippetui/text/text-05.tsx",
+      "target": "/components/codesnippetui/text-05.tsx"
+    }
+  ]
+}

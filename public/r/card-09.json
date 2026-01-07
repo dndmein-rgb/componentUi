@@ -1,0 +1,16 @@
+{
+  "name": "card-09",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { Play } from \"lucide-react\";\n\ninterface Card09Props {\n  media?: {\n    title?: string;\n    duration?: string;\n  };\n}\n\nconst defaultProps: Card09Props = {\n  media: {\n    title: \"Intro to Neumorphism\",\n    duration: \"12:45\",\n  },\n};\n\nexport default function Card_09({ media = defaultProps.media }: Card09Props) {\n  return (\n    <div\n      className={cn(\n        \"w-full max-w-xs mx-auto\",\n        \"bg-zinc-100 dark:bg-[#2D2D2D]\",\n        \"rounded-3xl p-6\",\n        \"shadow-neumorphic-light dark:shadow-neumorphic-dark\",\n        \"transition-all duration-300\"\n      )}\n    >\n      <div className=\"aspect-square bg-zinc-200 dark:bg-zinc-800 rounded-2xl mb-4 shadow-inner-light dark:shadow-inner-dark\">\n        {/* Placeholder for an image or visual element */}\n      </div>\n      <h3 className=\"font-semibold text-zinc-800 dark:text-zinc-200\">\n        {media?.title}\n      </h3>\n      <p className=\"text-sm text-zinc-500 dark:text-zinc-400 mb-4\">\n        {media?.duration}\n      </p>\n      <button\n        className=\"w-full flex items-center justify-center gap-2 py-3 bg-zinc-100 dark:bg-[#2D2D2D] rounded-xl text-zinc-600 dark:text-zinc-300 font-medium shadow-neumorphic-light dark:shadow-neumorphic-dark active:shadow-inner-light dark:active:shadow-inner-dark\"\n      >\n        <Play className=\"w-4 h-4\" />\n        Play\n      </button>\n    </div>\n  );\n}\n\n// In your tailwind.config.js, you would add these custom shadows:\n/*\ntheme: {\n  extend: {\n    boxShadow: {\n      'neumorphic-light': '9px 9px 16px #d1d1d1, -9px -9px 16px #ffffff',\n      'inner-light': 'inset 9px 9px 16px #d1d1d1, inset -9px -9px 16px #ffffff',\n      'neumorphic-dark': '9px 9px 16px #242424, -9px -9px 16px #363636',\n      'inner-dark': 'inset 9px 9px 16px #242424, inset -9px -9px 16px #363636',\n    },\n  },\n},\n*/\n",
+      "path": "/components/codesnippetui/card/card-09.tsx",
+      "target": "/components/codesnippetui/card-09.tsx"
+    }
+  ]
+}

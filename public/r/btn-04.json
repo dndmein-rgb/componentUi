@@ -1,0 +1,19 @@
+{
+  "name": "btn-04",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { ShoppingCart } from \"lucide-react\";\n\ninterface Btn04Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n    price?: string;\n}\n\nexport default function Btn04({\n    className,\n    price = \"$99\",\n    ...props\n}: Btn04Props) {\n    return (\n        <button\n            className={cn(\n                \"flex items-center justify-center h-12 rounded-xl\",\n                \"bg-green-600 text-white\",\n                \"hover:bg-green-700\",\n                \"transition-all duration-300\",\n                \"shadow-lg shadow-green-500/20\",\n                \"group\",\n                className\n            )}\n            {...props}\n        >\n            <div className=\"flex items-center gap-4 px-6\">\n                <ShoppingCart className=\"w-5 h-5\" />\n                <div className=\"w-px h-6 bg-green-500\" />\n                <span className=\"font-semibold\">Buy Now</span>\n                <span className=\"font-bold text-lg\">{price}</span>\n            </div>\n        </button>\n    );\n}\n",
+      "path": "/components/codesnippetui/button/btn-04.tsx",
+      "target": "/components/codesnippetui/btn-04.tsx"
+    }
+  ]
+}

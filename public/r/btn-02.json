@@ -1,0 +1,15 @@
+{
+  "name": "btn-02",
+  "type": "registry:component",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { Zap } from \"lucide-react\";\n\ninterface Btn02Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {\n    children?: React.ReactNode;\n}\n\nexport default function Btn02({\n    className,\n    children = \"Get Started\",\n    ...props\n}: Btn02Props) {\n    return (\n        <button\n            className={cn(\n                \"relative inline-flex items-center justify-center h-12 px-8 rounded-full\",\n                \"overflow-hidden\",\n                \"text-white font-medium\",\n                \"transition-all duration-300\",\n                \"group\",\n                className\n            )}\n            {...props}\n        >\n            <span className=\"absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 transition-all duration-500 group-hover:from-purple-700 group-hover:to-indigo-700 group-hover:scale-110\" />\n            <div className=\"relative flex items-center gap-2\">\n                <Zap className=\"w-4 h-4\" />\n                <span>{children}</span>\n            </div>\n        </button>\n    );\n}\n",
+      "path": "/components/codesnippetui/button/btn-02.tsx",
+      "target": "/components/codesnippetui/btn-02.tsx"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "card-10",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button",
+    "progress"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { Wifi } from \"lucide-react\";\n\ninterface Card10Props {\n  creditCard?: {\n    number?: string;\n    holder?: string;\n    expiry?: string;\n  };\n}\n\nconst defaultProps: Card10Props = {\n  creditCard: {\n    number: \"**** **** **** 1234\",\n    holder: \"John Doe\",\n    expiry: \"12/26\",\n  },\n};\n\nexport default function Card_10({ creditCard = defaultProps.creditCard }: Card10Props) {\n  return (\n    <div\n      className={cn(\n        \"w-full max-w-sm mx-auto\",\n        \"relative rounded-2xl overflow-hidden aspect-[1.586/1] p-6\", // Aspect ratio for a credit card\n        \"bg-white/10 backdrop-blur-xl border border-white/20\",\n        \"shadow-2xl\"\n      )}\n    >\n        {/* Background gradient blobs */}\n        <div className=\"absolute top-0 -left-1/3 w-48 h-48 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob\"></div>\n        <div className=\"absolute bottom-0 -right-1/3 w-48 h-48 bg-sky-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000\"></div>\n\n        <div className=\"relative z-10 flex flex-col justify-between h-full text-white\">\n            <div>\n                <div className=\"flex justify-between items-start\">\n                    <span className=\"font-bold text-lg\">Bank</span>\n                    <Wifi className=\"w-6 h-6\" />\n                </div>\n            </div>\n            <div>\n                <span className=\"font-mono text-2xl tracking-widest\">{creditCard?.number}</span>\n                <div className=\"flex justify-between items-end mt-4\">\n                    <div>\n                        <span className=\"text-xs uppercase\">Card Holder</span>\n                        <p className=\"font-medium tracking-wider\">{creditCard?.holder}</p>\n                    </div>\n                    <div>\n                        <span className=\"text-xs uppercase\">Expires</span>\n                        <p className=\"font-medium tracking-wider\">{creditCard?.expiry}</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  );\n}\n\n// In your tailwind.config.js for blob animation:\n/*\ntheme: {\n  extend: {\n    animation: {\n        blob: \"blob 7s infinite\",\n    },\n    keyframes: {\n        blob: {\n            \"0%\": { transform: \"translate(0px, 0px) scale(1)\" },\n            \"33%\": { transform: \"translate(30px, -50px) scale(1.1)\" },\n            \"66%\": { transform: \"translate(-20px, 20px) scale(0.9)\" },\n            \"100%\": { transform: \"translate(0px, 0px) scale(1)\" },\n        },\n    },\n  },\n},\n*/\n",
+      "path": "/components/codesnippetui/card/card-10.tsx",
+      "target": "/components/codesnippetui/card-10.tsx"
+    }
+  ]
+}

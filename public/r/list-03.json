@@ -1,0 +1,16 @@
+{
+  "name": "list-03",
+  "type": "registry:component",
+  "registryDependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "import { cn } from \"@/lib/utils\";\nimport { Checkbox } from \"@/components/ui/checkbox\";\nimport { Badge } from \"@/components/ui/badge\";\n\ninterface TaskItem {\n  id: string;\n  label: string;\n  completed: boolean;\n  dueDate?: string;\n  priority?: \"high\" | \"medium\" | \"low\";\n}\n\nconst TASK_ITEMS: TaskItem[] = [\n  { id: \"1\", label: \"Design the new dashboard\", completed: true, dueDate: \"Jan 28\", priority: \"high\" },\n  { id: \"2\", label: \"Develop the API for user authentication\", completed: false, dueDate: \"Feb 02\", priority: \"high\" },\n  { id: \"3\", label: \"Write documentation for the new feature\", completed: false, dueDate: \"Feb 10\", priority: \"medium\" },\n  { id: \"4\", label: \"Review pull requests\", completed: true, dueDate: \"Jan 27\", priority: \"low\" },\n];\n\nconst priorityStyles = {\n    high: \"border-red-500/50 bg-red-500/10 text-red-700 dark:text-red-300\",\n    medium: \"border-yellow-500/50 bg-yellow-500/10 text-yellow-700 dark:text-yellow-300\",\n    low: \"border-green-500/50 bg-green-500/10 text-green-700 dark:text-green-300\",\n}\n\nexport default function List_03() {\n  return (\n    <div className=\"w-full max-w-lg mx-auto\">\n        <h3 className=\"text-lg font-semibold text-zinc-900 dark:text-white mb-4\">Today's Tasks</h3>\n        <div className=\"space-y-3\">\n            {TASK_ITEMS.map((task) => (\n            <div\n                key={task.id}\n                className={cn(\n                    \"flex items-center gap-3 p-3 rounded-lg border\",\n                    \"bg-white dark:bg-zinc-900\",\n                    task.completed \n                        ? \"border-zinc-200 dark:border-zinc-800\" \n                        : \"border-zinc-300 dark:border-zinc-700 shadow-sm\"\n                )}\n            >\n                <Checkbox\n                    id={`task-${task.id}`}\n                    checked={task.completed}\n                    className=\"w-5 h-5\"\n                />\n                <label\n                    htmlFor={`task-${task.id}`}\n                    className={cn(\n                        \"flex-1 text-sm\",\n                        task.completed \n                            ? \"text-zinc-500 dark:text-zinc-500 line-through\" \n                            : \"text-zinc-800 dark:text-zinc-200\"\n                    )}\n                >\n                    {task.label}\n                </label>\n                {task.priority && (\n                    <Badge variant=\"outline\" className={cn(\"text-xs\", priorityStyles[task.priority])}>\n                        {task.priority}\n                    </Badge>\n                )}\n                {task.dueDate && (\n                    <span className=\"text-xs text-zinc-500 dark:text-zinc-400 min-w-[50px] text-right\">\n                        {task.dueDate}\n                    </span>\n                )}\n            </div>\n            ))}\n      </div>\n    </div>\n  );\n}\n",
+      "path": "/components/codesnippetui/list/list-03.tsx",
+      "target": "/components/codesnippetui/list-03.tsx"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "btn-05",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { UserPlus, Check } from \"lucide-react\";\nimport { useState } from \"react\";\n\nexport default function Btn05() {\n  const [isFollowing, setIsFollowing] = useState(false);\n\n  return (\n    <button\n      onClick={() => setIsFollowing(!isFollowing)}\n      className={cn(\n        \"flex items-center justify-center w-32 h-10 rounded-full\",\n        \"font-semibold text-sm\",\n        \"transition-all duration-300 ease-in-out\",\n        isFollowing\n          ? \"bg-zinc-200 dark:bg-zinc-700 text-zinc-800 dark:text-zinc-200\"\n          : \"bg-blue-500 text-white hover:bg-blue-600\",\n        \"active:scale-95\"\n      )}\n    >\n      {isFollowing ? (\n        <div className=\"flex items-center gap-1.5\">\n          <Check className=\"w-4 h-4\" />\n          <span>Following</span>\n        </div>\n      ) : (\n        <div className=\"flex items-center gap-1.5\">\n          <UserPlus className=\"w-4 h-4\" />\n          <span>Follow</span>\n        </div>\n      )}\n    </button>\n  );\n}\n",
+      "path": "/components/codesnippetui/button/btn-05.tsx",
+      "target": "/components/codesnippetui/btn-05.tsx"
+    }
+  ]
+}

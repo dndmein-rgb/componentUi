@@ -1,0 +1,25 @@
+{
+  "name": "btn-06",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Download, Check } from \"lucide-react\";\nimport { useState } from \"react\";\n\ntype DownloadState = \"idle\" | \"downloading\" | \"completed\";\n\nexport default function Btn06() {\n  const [state, setState] = useState<DownloadState>(\"idle\");\n  const [progress, setProgress] = useState(0);\n\n  const handleDownload = () => {\n    if (state !== \"idle\") return;\n\n    setState(\"downloading\");\n    const interval = setInterval(() => {\n      setProgress((prev) => {\n        if (prev >= 100) {\n          clearInterval(interval);\n          setState(\"completed\");\n          setTimeout(() => {\n              setState(\"idle\");\n              setProgress(0);\n          }, 2000);\n          return 100;\n        }\n        return prev + 5;\n      });\n    }, 100);\n  };\n\n  return (\n    <button\n      onClick={handleDownload}\n      disabled={state !== \"idle\"}\n      className={cn(\n        \"relative w-48 h-12 rounded-lg overflow-hidden\",\n        \"bg-zinc-800 text-white\",\n        \"font-semibold text-sm\",\n        \"transition-all duration-300\",\n        \"flex items-center justify-center\",\n        \"disabled:opacity-80 disabled:cursor-not-allowed\"\n      )}\n    >\n        <div \n            className=\"absolute top-0 left-0 h-full bg-green-500/80 transition-all duration-150\"\n            style={{ width: `${progress}%` }}\n        />\n      <div className=\"relative z-10 flex items-center gap-2\">\n        {state === \"idle\" && <><Download className=\"w-4 h-4\" /> <span>Download File</span></>}\n        {state === \"downloading\" && `Downloading... ${progress}%`}\n        {state === \"completed\" && <><Check className=\"w-5 h-5\" /> <span>Completed</span></>}\n      </div>\n    </button>\n  );\n}\n",
+      "path": "/components/codesnippetui/button/btn-06.tsx",
+      "target": "/components/codesnippetui/btn-06.tsx"
+    },
+    {
+      "type": "registry:hook",
+      "content": "import * as React from \"react\";\n\nexport function useCopyToClipboard({\n    timeout = 2000,\n    onCopy,\n}: {\n    timeout?: number;\n    onCopy?: () => void;\n} = {}) {\n    const [isCopied, setIsCopied] = React.useState(false);\n\n    const copyToClipboard = (value: string) => {\n        if (typeof window === \"undefined\" || !navigator.clipboard.writeText) {\n            return;\n        }\n\n        if (!value) return;\n\n        navigator.clipboard.writeText(value).then(() => {\n            setIsCopied(true);\n\n            if (onCopy) {\n                onCopy();\n            }\n\n            setTimeout(() => {\n                setIsCopied(false);\n            }, timeout);\n        }, console.error);\n    };\n\n    return { isCopied, copyToClipboard };\n}\n",
+      "path": "/hooks/use-copy-to-clipboard.ts",
+      "target": "/hooks/use-copy-to-clipboard.ts"
+    }
+  ]
+}

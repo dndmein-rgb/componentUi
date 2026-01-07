@@ -1,0 +1,21 @@
+{
+  "name": "input-08",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\r\n\r\nimport { AtSign, Users, SmilePlus, SendHorizontal } from \"lucide-react\";\r\nimport { useState } from \"react\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\nimport { useAutoResizeTextarea } from \"@/hooks/use-auto-resize-textarea\";\r\n\r\nexport default function Input_08() {\r\n  const [inputValue, setInputValue] = useState(\"\");\r\n  const { textareaRef, adjustHeight } = useAutoResizeTextarea({ minHeight: 44, maxHeight: 180 });\r\n\r\n  return (\r\n    <div className=\"w-full max-w-xl mx-auto bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-lg\">\r\n      <div className=\"flex items-center justify-between px-4 py-2 border-b border-zinc-100 dark:border-zinc-800\">\r\n        <div className=\"flex -space-x-2\">\r\n          {[1, 2].map((i) => (\r\n            <div key={i} className=\"w-6 h-6 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 border-2 border-white dark:border-zinc-900\" />\r\n          ))}\r\n          <div className=\"w-6 h-6 rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-[10px] font-bold border-2 border-white dark:border-zinc-900 text-zinc-500\">+1</div>\r\n        </div>\r\n        <span className=\"text-[10px] text-zinc-400 font-medium italic\">Sarah is typing...</span>\r\n      </div>\r\n      <div className=\"flex items-end p-2 gap-2\">\r\n        <button className=\"p-2 text-zinc-400 hover:text-zinc-600 transition-colors\">\r\n          <AtSign className=\"w-5 h-5\" />\r\n        </button>\r\n        <Textarea\r\n          ref={textareaRef}\r\n          value={inputValue}\r\n          onChange={(e) => { setInputValue(e.target.value); adjustHeight(); }}\r\n          placeholder=\"Ask team assistant...\"\r\n          className=\"flex-1 bg-transparent border-none focus-visible:ring-0 resize-none py-2 text-sm\"\r\n        />\r\n        <button className=\"p-2 text-blue-500\">\r\n          <SendHorizontal className=\"w-5 h-5\" />\r\n        </button>\r\n      </div>\r\n    </div>\r\n  );\r\n}",
+      "path": "/components/codesnippetui/input/input-08.tsx",
+      "target": "/components/codesnippetui/input-08.tsx"
+    },
+    {
+      "type": "registry:hook",
+      "content": "import * as React from \"react\";\n\nexport function useCopyToClipboard({\n    timeout = 2000,\n    onCopy,\n}: {\n    timeout?: number;\n    onCopy?: () => void;\n} = {}) {\n    const [isCopied, setIsCopied] = React.useState(false);\n\n    const copyToClipboard = (value: string) => {\n        if (typeof window === \"undefined\" || !navigator.clipboard.writeText) {\n            return;\n        }\n\n        if (!value) return;\n\n        navigator.clipboard.writeText(value).then(() => {\n            setIsCopied(true);\n\n            if (onCopy) {\n                onCopy();\n            }\n\n            setTimeout(() => {\n                setIsCopied(false);\n            }, timeout);\n        }, console.error);\n    };\n\n    return { isCopied, copyToClipboard };\n}\n",
+      "path": "/hooks/use-copy-to-clipboard.ts",
+      "target": "/hooks/use-copy-to-clipboard.ts"
+    }
+  ]
+}

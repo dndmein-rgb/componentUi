@@ -1,0 +1,15 @@
+{
+  "name": "text-02",
+  "type": "registry:component",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "type": "registry:component",
+      "content": "\"use client\";\r\n\r\nexport default function Text_02() {\r\n    return (\r\n        <div className=\"flex items-center justify-center py-4\">\r\n            <h1 className=\"text-4xl sm:text-3xl font-bold reveal-mask relative\">\r\n                Mystic Reveal\r\n            </h1>\r\n            <style>{`\r\n                .reveal-mask {\r\n                    color: rgba(255, 255, 255, 0.1);\r\n                    background: linear-gradient(to right, #4f46e5, #ec4899, #4f46e5);\r\n                    background-clip: text;\r\n                    -webkit-background-clip: text;\r\n                    background-size: 200% auto;\r\n                    animation: reveal 4s ease-in-out infinite;\r\n                }\r\n                @keyframes reveal {\r\n                    0%, 100% { background-position: 0% 50%; opacity: 0.3; }\r\n                    50% { background-position: 100% 50%; opacity: 1; }\r\n                }\r\n                .dark .reveal-mask {\r\n                    color: rgba(0, 0, 0, 0.1);\r\n                }\r\n            `}</style>\r\n        </div>\r\n    );\r\n}",
+      "path": "/components/codesnippetui/text/text-02.tsx",
+      "target": "/components/codesnippetui/text-02.tsx"
+    }
+  ]
+}
