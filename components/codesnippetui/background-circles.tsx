@@ -173,7 +173,7 @@ export function BackgroundCircles({
                 >
                     {description}
                     <span className="mx-3 opacity-50">·</span>
-                    CodeSnippet UI
+                    ComponentsCafe
                 </motion.p>
             </motion.div>
 

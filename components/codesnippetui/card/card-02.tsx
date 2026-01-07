@@ -180,7 +180,7 @@ export default function Card02({
                     </div>
 
                     {/* Footer Actions */}
-                    <div className="flex gap-3 pt-2">
+                    {/* <div className="flex gap-3 pt-2">
                         <button className="flex-[2] group relative overflow-hidden rounded-xl bg-white text-black font-black text-xs uppercase tracking-widest py-4 transition-transform active:scale-95">
                             <span className="relative z-10 flex items-center justify-center gap-2">
                                 <ExternalLink className="w-4 h-4" />
@@ -191,7 +191,7 @@ export default function Card02({
                         <button className="flex-1 rounded-xl bg-white/5 border border-white/10 text-white flex items-center justify-center hover:bg-white/10 transition-colors">
                             <Share2 className="w-4 h-4" />
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title:{
-        template:"CodeSnippet UI = Open Source Components",
-        default:"CodeSnippet UI"
+        template:"ComponentsCafe = Open Source Components",
+        default:"ComponentsCafe"
     }
 };
 

@@ -8,6 +8,8 @@ import ReactIcon from "@/components/icons/react";
 import ShadcnIcon from "@/components/icons/shadcn";
 import { useState } from "react";
 import Motion from "../icons/motion";
+import TailwindCSS from "../icons/tailwindcss";
+import { Badge } from "../ui/badge";
 
 export default function Features() {
     const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -21,8 +23,17 @@ export default function Features() {
     };
 
     return (
-        <div className="w-full max-w-none flex flex-col justify-start items-center z-10 mx-auto">
-            <div className="grid grid-cols-3 md:flex md:flex-wrap items-center justify-start gap-6 md:gap-8 w-[95%] mx-auto py-4">
+        <div className="w-full max-w-4xl mx-auto py-16">
+            <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">
+                    Built with the best technologies
+                </h2>
+                <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+                    Our components are crafted using industry-standard tools and frameworks for optimal performance and developer experience.
+                </p>
+            </div>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center justify-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -33,37 +44,82 @@ export default function Features() {
                         ease: [0.23, 1, 0.32, 1],
                     }}
                     className={cn(
-                        "text-blue-600 dark:text-blue-400 relative flex flex-col items-center gap-2"
+                        "flex flex-col items-center gap-3 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
                     )}
                     onMouseEnter={() => handleMouseEnter("TailwindCSS")}
                     onMouseLeave={handleMouseLeave}
                 >
-                    <svg
-                        viewBox="0 0 54 33"
-                        className="w-8 h-8"
-                        aria-labelledby="tailwindcss-icon-title"
-                        role="img"
-                    >
-                        <title id="tailwindcss-icon-title">TailwindCSS</title>
-                        <g clipPath="url(#prefix__clip0)">
-                            <path
-                                fill="#38bdf8"
-                                fillRule="evenodd"
-                                d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
-                                clipRule="evenodd"
-                            />
-                        </g>
-                    </svg>
+                    <TailwindCSS className="w-12 h-12 text-blue-500" aria-label="TailwindCSS" />
                     <motion.span
                         animate={{
                             scale: hoveredItem === "TailwindCSS" ? 1.1 : 1,
                             fontWeight:
-                                hoveredItem === "TailwindCSS" ? 500 : 400,
+                                hoveredItem === "TailwindCSS" ? 600 : 500,
                         }}
-                        className="text-xs text-center mt-1 whitespace-nowrap text-black dark:text-white"
+                        className="text-sm font-medium text-zinc-900 dark:text-zinc-100"
                     >
                         TailwindCSS
                     </motion.span>
+                    <Badge variant="secondary" className="text-xs">Utility-first</Badge>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                        duration: 0.3,
+                        delay: 0.2,
+                        ease: [0.23, 1, 0.32, 1],
+                    }}
+                    className={cn(
+                        "flex flex-col items-center gap-3 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                    )}
+                    onMouseEnter={() => handleMouseEnter("Motion")}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <Motion className="w-12 h-12 text-indigo-500" aria-label="Motion" />
+                    <motion.span
+                        animate={{
+                            scale: hoveredItem === "Motion" ? 1.1 : 1,
+                            fontWeight: hoveredItem === "Motion" ? 600 : 500,
+                        }}
+                        className="text-sm font-medium text-zinc-900 dark:text-zinc-100"
+                    >
+                        Motion
+                    </motion.span>
+                    <Badge variant="secondary" className="text-xs">Animations</Badge>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                        duration: 0.3,
+                        delay: 0.3,
+                        ease: [0.23, 1, 0.32, 1],
+                    }}
+                    className={cn(
+                        "flex flex-col items-center gap-3 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                    )}
+                    onMouseEnter={() => handleMouseEnter("Shadcn UI")}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <ShadcnIcon
+                        className="w-12 h-12 text-emerald-500"
+                        aria-label="Shadcn/ui"
+                    />
+                    <motion.span
+                        animate={{
+                            scale: hoveredItem === "Shadcn UI" ? 1.1 : 1,
+                            fontWeight: hoveredItem === "Shadcn UI" ? 600 : 500,
+                        }}
+                        className="text-sm font-medium text-zinc-900 dark:text-zinc-100"
+                    >
+                        shadcn/ui
+                    </motion.span>
+                    <Badge variant="secondary" className="text-xs">Accessible</Badge>
                 </motion.div>
 
                 <motion.div
@@ -76,24 +132,24 @@ export default function Features() {
                         ease: [0.23, 1, 0.32, 1],
                     }}
                     className={cn(
-                        "text-yellow-500 dark:text-[#F5EA1E] relative flex flex-col items-center gap-2"
+                        "flex flex-col items-center gap-3 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
                     )}
-                    onMouseEnter={() => handleMouseEnter("Motion")}
+                    onMouseEnter={() => handleMouseEnter("Next.js")}
                     onMouseLeave={handleMouseLeave}
                 >
-                    
-                    <Motion  className="w-8 h-8 text-black dark:text-white" aria-label="Motion"/>
+                    <Nextjs className="w-12 h-12" aria-label="Next.js" />
                     <motion.span
                         animate={{
-                            scale: hoveredItem === "Motion" ? 1.1 : 1,
-                            fontWeight: hoveredItem === "Motion" ? 500 : 400,
+                            scale: hoveredItem === "Next.js" ? 1.1 : 1,
+                            fontWeight: hoveredItem === "Next.js" ? 600 : 500,
                         }}
-                        className="text-xs text-center mt-1 whitespace-nowrap text-black dark:text-white"
+                        className="text-sm font-medium text-zinc-900 dark:text-zinc-100"
                     >
-                        Motion
+                        Next.js
                     </motion.span>
+                    <Badge variant="secondary" className="text-xs">Full-stack</Badge>
                 </motion.div>
-
+                
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -104,77 +160,22 @@ export default function Features() {
                         ease: [0.23, 1, 0.32, 1],
                     }}
                     className={cn(
-                        "text-black dark:text-white flex flex-col items-center gap-2 relative"
-                    )}
-                    onMouseEnter={() => handleMouseEnter("Shadcn UI")}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <ShadcnIcon
-                        className="w-8 h-8 text-black dark:text-white"
-                        aria-label="Shadcn/ui"
-                    />
-                    <motion.span
-                        animate={{
-                            scale: hoveredItem === "Shadcn UI" ? 1.1 : 1,
-                            fontWeight: hoveredItem === "Shadcn UI" ? 500 : 400,
-                        }}
-                        className="text-xs text-center mt-1 whitespace-nowrap"
-                    >
-                        shadcn/ui
-                    </motion.span>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                        duration: 0.3,
-                        delay: 0.6,
-                        ease: [0.23, 1, 0.32, 1],
-                    }}
-                    className={cn(
-                        "text-black dark:text-white flex flex-col items-center gap-2 relative col-span-1 col-start-1 md:col-auto"
-                    )}
-                    onMouseEnter={() => handleMouseEnter("Next.js")}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <Nextjs className="w-8 h-8" aria-label="Next.js" />
-                    <motion.span
-                        animate={{
-                            scale: hoveredItem === "Next.js" ? 1.1 : 1,
-                            fontWeight: hoveredItem === "Next.js" ? 500 : 400,
-                        }}
-                        className="text-xs text-center mt-1 whitespace-nowrap"
-                    >
-                        Next.js
-                    </motion.span>
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                        duration: 0.3,
-                        delay: 0.7,
-                        ease: [0.23, 1, 0.32, 1],
-                    }}
-                    className={cn(
-                        "text-black dark:text-white flex flex-col items-center gap-2 relative col-span-1 col-start-3 md:col-auto"
+                        "flex flex-col items-center gap-3 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
                     )}
                     onMouseEnter={() => handleMouseEnter("React")}
                     onMouseLeave={handleMouseLeave}
                 >
-                    <ReactIcon className="w-8 h-8" aria-label="React" />
+                    <ReactIcon className="w-12 h-12 text-blue-400" aria-label="React" />
                     <motion.span
                         animate={{
                             scale: hoveredItem === "React" ? 1.1 : 1,
-                            fontWeight: hoveredItem === "React" ? 500 : 400,
+                            fontWeight: hoveredItem === "React" ? 600 : 500,
                         }}
-                        className="text-xs text-center mt-1 whitespace-nowrap"
+                        className="text-sm font-medium text-zinc-900 dark:text-zinc-100"
                     >
                         React
                     </motion.span>
+                    <Badge variant="secondary" className="text-xs">Component-based</Badge>
                 </motion.div>
             </div>
         </div>
