@@ -31,7 +31,7 @@ import Profile_03 from "../codesnippetui/profile/profile-03";
 
 const HeroSection = () => {
   return (
-    <div className="mx-auto w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 px-4 sm:px-6 py-12 lg:py-20">
+    <div className="mx-auto w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 px-4 ">
       {/* LEFT SIDE - TITLE & CTA */}
       <div className="w-full lg:w-[45%] flex flex-col items-center lg:items-start text-center lg:text-left space-y-8">
         <div className="flex items-center gap-2 mb-4">
