@@ -44,7 +44,7 @@ export function ComponentShowcaseCard({
                 </div>
 
                 <div className="flex flex-col items-center pt-8">
-                    <Input_08 label="" />
+                    <Input_08 />
                 </div>
             </div>
 
