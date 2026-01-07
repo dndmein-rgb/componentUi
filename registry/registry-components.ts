@@ -1287,4 +1287,16 @@ export const component: Registry = [
             },
         ],
     },
+    {
+        name: "card-liquid",
+        type: "registry:component",
+        dependencies: ["lucide-react", "motion"],
+        registryDependencies: [],
+        files: [
+            {
+                path: "components/codesnippetui/cardliquid.tsx",
+                type: "registry:component",
+            },
+        ],
+    },
 ];
